@@ -1,15 +1,11 @@
 {
-  "name": "react-pdf-monorepo",
+  "name": "pdf-viewer-monorepo",
   "version": "1.0.0",
-  "description": "react-pdf monorepo",
+  "description": "pdf-viewer monorepo",
   "type": "module",
-  "workspaces": [
-    "packages/*",
-    "test"
-  ],
   "scripts": {
-    "build": "yarn workspace react-pdf build",
-    "dev": "yarn workspace react-pdf watch & yarn workspace test dev",
+    "build": "yarn workspace pdf-viewer build",
+    "dev": "yarn workspace pdf-viewer watch & yarn workspace test dev",
     "format": "yarn workspaces foreach --all run format",
     "lint": "yarn workspaces foreach --all run lint",
     "postinstall": "husky",

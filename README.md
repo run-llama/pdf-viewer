@@ -1,1 +1,1 @@
-packages/react-pdf/README.md
+packages/pdf-viewer/README.md
