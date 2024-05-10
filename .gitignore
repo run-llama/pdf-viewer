@@ -33,3 +33,7 @@ yarn-error.log
 **/.env
 **/.env.*
 !**/.env.example
+
+# sample app
+sample/*
+*.tgz
