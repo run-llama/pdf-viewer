@@ -33,35 +33,33 @@ const PDFViewer: React.FC<PDFViewerProps> = ({ file, hideOptionBar, containerCla
   } = usePDFViewer(file);
 
   return (
-    <>
-      <h6>v1</h6>
-      <div className={clsx('pdf-viewer-container', containerClassName)}>
-        {!hideOptionBar && (
-          <PDFOptionsBar
-            scrolledIndex={scrolledIndex}
-            numPages={numPages}
-            scaleText={scaleText}
-            nextPage={nextPage}
-            prevPage={prevPage}
-            handleZoomIn={handleZoomIn}
-            handleZoomOut={handleZoomOut}
-            goToPage={goToPage}
-            setZoomLevel={setZoomLevel}
-            zoomInEnabled={zoomInEnabled}
-            zoomOutEnabled={zoomOutEnabled}
-          />
-        )}
-        <MemoizedVirtualizedPDF
-          key={`${file.id}`}
-          ref={pdfFocusRef}
+    <div className={clsx('pdf-viewer-container', containerClassName)}>
+      {!hideOptionBar && (
+        <PDFOptionsBar
           file={file}
-          setIndex={setCurrentPageNumber}
-          scale={scale}
-          setScaleFit={setScaleFit}
-          setNumPages={setNumPages}
+          scrolledIndex={scrolledIndex}
+          numPages={numPages}
+          scaleText={scaleText}
+          nextPage={nextPage}
+          prevPage={prevPage}
+          handleZoomIn={handleZoomIn}
+          handleZoomOut={handleZoomOut}
+          goToPage={goToPage}
+          setZoomLevel={setZoomLevel}
+          zoomInEnabled={zoomInEnabled}
+          zoomOutEnabled={zoomOutEnabled}
         />
-      </div>
-    </>
+      )}
+      <MemoizedVirtualizedPDF
+        key={`${file.id}`}
+        ref={pdfFocusRef}
+        file={file}
+        setIndex={setCurrentPageNumber}
+        scale={scale}
+        setScaleFit={setScaleFit}
+        setNumPages={setNumPages}
+      />
+    </div>
   );
 };
 

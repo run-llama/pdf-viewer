@@ -248,15 +248,6 @@ const VirtualizedPDF = forwardRef<PdfFocusHandler, VirtualizedPDFProps>(
       }
     };
 
-    const loadingDiv = () => {
-      return (
-        <div className={`flex h-[calc(100vh-44px)] w-[56vw] items-center justify-center`}>
-          {' '}
-          Loading
-        </div>
-      );
-    };
-
     return (
       <div className="pdfDocument">
         <Document
@@ -264,7 +255,7 @@ const VirtualizedPDF = forwardRef<PdfFocusHandler, VirtualizedPDFProps>(
           onItemClick={onItemClick}
           file={file.url}
           onLoadSuccess={onDocumentLoadSuccess}
-          loading={loadingDiv}
+          loading="Loading..."
         >
           {pdf ? (
             <List

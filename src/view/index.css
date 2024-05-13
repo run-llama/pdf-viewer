@@ -1,11 +1,83 @@
 .pdf-viewer-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 1rem;
   width: 100%;
   height: 100%;
 }
 
 .pdf-viewer-container .optionBar {
-  background-color: aqua;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  align-items: center;
+  border: 1px solid #e4e4e7;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1);
+  padding: 4px;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.pdf-viewer-container .optionBar .title {
+  padding-left: 8px;
+  margin-left: 8px;
+  border-right: 1px solid lightslategray;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.pdf-viewer-container .optionBar .control {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+}
+
+.pdf-viewer-container .optionBar .control .pageControl {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  border-right: 1px solid lightslategray;
+}
+
+.pdf-viewer-container .optionBar .control button {
+  border: 1px solid #e4e4e7;
+  border-radius: 4px;
+  padding: 4px;
+  cursor: pointer;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pdf-viewer-container .optionBar .control button:hover {
+  background-color: #f4f4f5;
+}
+
+.pdf-viewer-container .optionBar .control .pageControl .pageInput {
+  border: 1px solid #e4e4e7;
+  border-radius: 4px;
+  padding: 4px;
+  width: 50px;
+  text-align: center;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.pdf-viewer-container .optionBar .control .zoomControl {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  justify-content: center;
+}
+
+.pdf-viewer-container .optionBar .control .zoomControl .zoomSelect {
+  border: 1px solid #e4e4e7;
+  border-radius: 4px;
+  padding: 4px;
+  height: 100%;
+  box-sizing: border-box;
 }
