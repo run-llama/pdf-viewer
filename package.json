@@ -1,29 +1,84 @@
 {
-  "name": "react-pdf-monorepo",
-  "version": "1.0.0",
-  "description": "react-pdf monorepo",
+  "name": "@llamaindex/pdf-viewer",
+  "version": "1.1.0",
+  "description": "React PDF viewer for LLM applications",
   "type": "module",
-  "workspaces": [
-    "packages/*",
-    "test"
+  "license": "MIT",
+  "sideEffects": [
+    "*.css"
   ],
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "source": "./src/index.ts",
+  "types": "./dist/cjs/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    }
+  },
   "scripts": {
-    "build": "yarn workspace react-pdf build",
-    "dev": "yarn workspace react-pdf watch & yarn workspace test dev",
-    "format": "yarn workspaces foreach --all run format",
-    "lint": "yarn workspaces foreach --all run lint",
-    "postinstall": "husky",
-    "test": "yarn workspaces foreach --all run test",
-    "tsc": "yarn workspaces foreach --all run tsc",
-    "unit": "yarn workspaces foreach --all run unit"
+    "build": "yarn build-js && yarn copy-styles",
+    "build-js": "yarn build-js-esm && yarn build-js-cjs && yarn build-js-cjs-package",
+    "build-js-esm": "tsc --project tsconfig.build.json --outDir dist/esm",
+    "build-js-cjs": "tsc --project tsconfig.build.json --outDir dist/cjs --module commonjs --moduleResolution node --verbatimModuleSyntax false",
+    "build-js-cjs-package": "echo '{\n  \"type\": \"commonjs\"\n}' > dist/cjs/package.json",
+    "clean": "rimraf dist",
+    "copy-styles": "cpy \"src/**/*.css\" dist/esm && cpy \"src/**/*.css\" dist/cjs",
+    "format": "prettier --check . --cache",
+    "format:write": "prettier --ignore-unknown --write .",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "prepack": "yarn clean && yarn build",
+    "test": "yarn lint && yarn tsc && yarn format",
+    "tsc": "tsc",
+    "watch": "yarn build-js-esm --watch & yarn build-js-cjs --watch & nodemon --watch src --ext css --exec \"yarn copy-styles\"",
+    "postinstall": "husky"
+  },
+  "dependencies": {
+    "clsx": "^2.0.0",
+    "react-pdf": "6.2.2",
+    "react-window": "1.8.9",
+    "@wojtekmaj/react-hooks": "1.17.2",
+    "react-intersection-observer": "9.5.1",
+    "lodash": "^4.17.21",
+    "lodash.debounce": "^4.0.8",
+    "fuse.js": "^6.6.2"
   },
   "devDependencies": {
-    "husky": "^9.0.0",
+    "@types/node": "*",
+    "@types/react": "*",
+    "@types/lodash": "^4.14.195",
+    "@types/lodash.debounce": "^4.0.7",
+    "cpy-cli": "^5.0.0",
+    "globals": "^15.1.0",
+    "husky": "^9.0.10",
+    "jsdom": "^24.0.0",
     "lint-staged": "^15.0.0",
-    "prettier": "^3.2.0"
+    "nodemon": "^3.0.0",
+    "prettier": "^3.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rimraf": "^3.0.0",
+    "typescript": "^5.4.2",
+    "eslint": "^8.56.0",
+    "eslint-config-wojtekmaj": "^1.0.0",
+    "@types/react-window": "^1.8.5"
   },
-  "resolutions": {
-    "eslint-plugin-import": "npm:eslint-plugin-i@^2.28.0"
+  "peerDependencies": {
+    "@types/react": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0",
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0",
+    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0"
   },
-  "packageManager": "yarn@4.1.1"
+  "peerDependenciesMeta": {
+    "@types/react": {
+      "optional": true
+    }
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "lint-staged": {
+    "*.{css,html,js,json,jsx,md,ts,tsx,yml}": "yarn format --write"
+  }
 }
