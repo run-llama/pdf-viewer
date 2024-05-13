@@ -60,7 +60,7 @@ const PDFOptionsBar: React.FC<PDFOptionsBarProps> = ({
   };
 
   return (
-    <div className={`flex h-[44px] w-full items-center justify-between border-b-2 `}>
+    <div className="optionBar">
       <div className="ml-3 flex w-1/2 items-center justify-start ">
         <div className={'flex items-center justify-center border-l-4 pl-2'}>
           {/* <div className="text font-bold">{file.ticker}</div>

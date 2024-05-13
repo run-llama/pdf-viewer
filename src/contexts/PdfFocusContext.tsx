@@ -28,7 +28,7 @@ export interface PdfFocusProviderProps {
   children: React.ReactNode;
 }
 // PDF Provider
-export const PdfFocusProvider: React.FC<PdfFocusProviderProps> = ({ children }) => {
+const PdfFocusProvider: React.FC<PdfFocusProviderProps> = ({ children }) => {
   const [pdfFocusState, setPdfFocusState] = useState<PdfFocusState>({
     documentId: '',
     pageNumber: 0,
@@ -45,3 +45,5 @@ export const PdfFocusProvider: React.FC<PdfFocusProviderProps> = ({ children }) 
     </PdfFocusContext.Provider>
   );
 };
+
+export default PdfFocusProvider;

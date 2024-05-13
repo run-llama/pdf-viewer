@@ -258,7 +258,7 @@ const VirtualizedPDF = forwardRef<PdfFocusHandler, VirtualizedPDFProps>(
     };
 
     return (
-      <div className={`relative h-[calc(100vh-44px)] w-full border-gray-pdf bg-gray-pdf`}>
+      <div className="pdfDocument">
         <Document
           key={file.url}
           onItemClick={onItemClick}
