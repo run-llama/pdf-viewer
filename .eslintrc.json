@@ -5,6 +5,10 @@
     "@typescript-eslint/no-use-before-define": "off",
     "react-hooks/exhaustive-deps": "off",
     "no-console": "off",
-    "@typescript-eslint/ban-ts-comment": "off"
+    "@typescript-eslint/ban-ts-comment": "off",
+    "react/jsx-no-leaked-render": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "react/no-array-index-key": "off"
   }
 }
