@@ -3,7 +3,7 @@ React PDF viewer for LLM applications
 ## Installation
 
 ```bash
-npm install pdf-viewer
+npm install @llamaindex/pdf-viewer
 ```
 
 ## Usage
@@ -11,7 +11,7 @@ npm install pdf-viewer
 ```jsx
 import React from 'react';
 
-import { PDFViewer, PdfFocusProvider } from 'pdf-viewer';
+import { PDFViewer, PdfFocusProvider } from '@llamaindex/pdf-viewer';
 
 const file = {
   id: 'sample-document',
@@ -28,3 +28,32 @@ function App() {
   );
 }
 ```
+
+## Custom Styles
+
+```jsx
+<PdfFocusProvider>
+  <PDFViewer containerClassName="your-container-class-name" file={file} />
+</PdfFocusProvider>
+```
+
+## Multiple PDF Files
+
+```jsx
+<PdfFocusProvider>
+  <div className="your-layout-class-name">
+    <PDFViewer file={file1} />
+    <PDFViewer file={file2} />
+    <PDFViewer file={file3} />
+  </div>
+</PdfFocusProvider>
+```
+
+## Dependencies
+
+- react-pdf
+- @wojtekmaj/react-hooks
+- react-window
+- react-intersection-observer
+- lodash
+- fuse.js
