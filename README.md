@@ -1,6 +1,6 @@
 # PDF viewer for RAG applications
 
-PDF viewer component as used by [secinsights](https://github.com/run-llama/sec-insights). Using [react-pdf](https://github.com/wojtekmaj/react-pdf). 
+PDF viewer component as used by [secinsights](https://github.com/run-llama/sec-insights). Using [react-pdf](https://github.com/wojtekmaj/react-pdf).
 
 ## Installation
 

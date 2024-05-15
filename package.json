@@ -35,21 +35,24 @@
     "postinstall": "husky"
   },
   "dependencies": {
-    "clsx": "^2.0.0",
-    "react-pdf": "6.2.2",
-    "react-window": "1.8.9",
     "@wojtekmaj/react-hooks": "1.17.2",
-    "react-intersection-observer": "9.5.1",
+    "clsx": "^2.0.0",
+    "fuse.js": "^6.6.2",
     "lodash": "^4.17.21",
     "lodash.debounce": "^4.0.8",
-    "fuse.js": "^6.6.2"
+    "react-intersection-observer": "9.5.1",
+    "react-pdf": "6.2.2",
+    "react-window": "1.8.9"
   },
   "devDependencies": {
-    "@types/node": "*",
-    "@types/react": "*",
     "@types/lodash": "^4.14.195",
     "@types/lodash.debounce": "^4.0.7",
+    "@types/node": "*",
+    "@types/react": "*",
+    "@types/react-window": "^1.8.5",
     "cpy-cli": "^5.0.0",
+    "eslint": "^8.56.0",
+    "eslint-config-wojtekmaj": "^1.0.0",
     "globals": "^15.1.0",
     "husky": "^9.0.10",
     "jsdom": "^24.0.0",
@@ -59,10 +62,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rimraf": "^3.0.0",
-    "typescript": "^5.4.2",
-    "eslint": "^8.56.0",
-    "eslint-config-wojtekmaj": "^1.0.0",
-    "@types/react-window": "^1.8.5"
+    "typescript": "^5.4.2"
   },
   "peerDependencies": {
     "@types/react": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0",
