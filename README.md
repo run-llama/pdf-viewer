@@ -1,4 +1,6 @@
-React PDF viewer for LLM applications
+# PDF viewer for RAG applications
+
+PDF viewer component as used by [secinsights](https://github.com/run-llama/sec-insights). Using [react-pdf](https://github.com/wojtekmaj/react-pdf). 
 
 ## Installation
 
@@ -49,9 +51,11 @@ function App() {
 </PdfFocusProvider>
 ```
 
-## Dependencies
+## 🙏 Thanks
 
-- react-pdf
+Thanks to the developers of the following dependencies that we're using:
+
+- [react-pdf](https://github.com/wojtekmaj/react-pdf)
 - @wojtekmaj/react-hooks
 - react-window
 - react-intersection-observer
