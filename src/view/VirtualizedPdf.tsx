@@ -15,7 +15,7 @@ import type { PdfDocument } from '../types/document.js';
 const pdfjsOptions = pdfjs.GlobalWorkerOptions;
 const pdfjsVersion = pdfjs.version;
 pdfjsOptions.workerSrc =
-  '//unpkg.com/pdfjs-dist@' + String(pdfjsVersion) + '/legacy/build/pdf.worker.min.js';
+  '//unpkg.com/pdfjs-dist@' + String(pdfjsVersion) + '/legacy/build/pdf.worker.min.mjs';
 
 interface PageType {
   getViewport: (arg0: { scale: number }) => { width: number };
