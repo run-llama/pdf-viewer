@@ -51,6 +51,42 @@ function App() {
 </PdfFocusProvider>
 ```
 
+## Next.js
+
+NextJs applications may need to update their configuration to be compatible with react-pdf v9 and pdfjs v4
+If you have issues related to canvas, you can add the following to your `next.config.js`:
+
+```diff
+module.exports = {
++ webpack: (config) => {
++   config.resolve.alias.canvas = false;
+
++   return config;
++ },
+}
+```
+
+Another common issue is: `TypeError: Promise.withResolvers is not a function`
+To fix this issue, you need to use dynamic imports for the PDF component (to indicate to NextJs to use it for client-side rendering only).
+
+```diff
+- import { PDFViewer, PdfFocusProvider } from "@llamaindex/pdf-viewer";
+
++ import dynamic from "next/dynamic";
+
++ // Dynamic imports for client-side rendering only
++ const PDFViewer = dynamic(
++   () => import("@llamaindex/pdf-viewer").then((module) => module.PDFViewer),
++   { ssr: false },
++ );
+
++ const PdfFocusProvider = dynamic(
++   () =>
++     import("@llamaindex/pdf-viewer").then((module) => module.PdfFocusProvider),
++   { ssr: false },
++ );
+```
+
 ## 🙏 Thanks
 
 Thanks to the developers of the following dependencies that we're using:
