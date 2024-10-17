@@ -32,9 +32,6 @@ jobs:
       - name: Install dependencies
         run: yarn --immutable
 
-      - name: Install dependencies
-        run: pnpm install
-
       - name: Add auth token to .npmrc file
         run: |
           cat << EOF >> ".npmrc"
@@ -46,7 +43,7 @@ jobs:
       - name: Get changeset status
         id: get-changeset-status
         run: |
-          pnpm changeset status --output .changeset/status.json
+          yarn changeset status --output .changeset/status.json
           new_version=$(jq -r '.releases[0].newVersion' < .changeset/status.json)
           rm -v .changeset/status.json
           echo "new-version=${new_version}" >> "$GITHUB_OUTPUT"
@@ -58,7 +55,7 @@ jobs:
           commit: Release ${{ steps.get-changeset-status.outputs.new-version }}
           title: Release ${{ steps.get-changeset-status.outputs.new-version }}
           # build package and call changeset publish
-          publish: pnpm release
+          publish: yarn release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
