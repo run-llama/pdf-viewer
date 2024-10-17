@@ -23,9 +23,6 @@
   padding-left: 8px;
   margin-left: 8px;
   border-right: 1px solid lightslategray;
-  display: flex;
-  align-items: center;
-  height: 100%;
 }
 
 .pdf-viewer-container .optionBar .control {
