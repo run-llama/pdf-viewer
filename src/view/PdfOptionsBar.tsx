@@ -61,7 +61,7 @@ const PDFOptionsBar: React.FC<PDFOptionsBarProps> = ({
 
   return (
     <div className="optionBar">
-      <div className="title">File ID: {file.id}</div>
+      <div className="title truncate">File ID: {file.id}</div>
       <div className="control">
         <div className="pageControl">
           <button className="pageUp" onClick={prevPage} disabled={scrolledIndex === 0}>

@@ -31,7 +31,11 @@
     "prepack": "yarn clean && yarn build",
     "test": "yarn lint && yarn tsc && yarn format",
     "tsc": "tsc",
-    "watch": "yarn build-js-esm --watch & yarn build-js-cjs --watch & nodemon --watch src --ext css --exec \"yarn copy-styles\""
+    "watch": "yarn build-js-esm --watch & yarn build-js-cjs --watch & nodemon --watch src --ext css --exec \"yarn copy-styles\"",
+    "new-snapshot": "yarn build && changeset version --snapshot",
+    "new-version": "yarn build && changeset version",
+    "release": "yarn build && changeset publish",
+    "release-snapshot": "yarn build && changeset publish --tag snapshot"
   },
   "dependencies": {
     "@wojtekmaj/react-hooks": "1.17.2",
@@ -44,6 +48,7 @@
     "react-window": "1.8.9"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.27.1",
     "@types/lodash": "^4.14.195",
     "@types/lodash.debounce": "^4.0.7",
     "@types/node": "*",

@@ -87,6 +87,25 @@ To fix this issue, you need to use dynamic imports for the PDF component (to ind
 + );
 ```
 
+## Contributing
+
+When making changes to this project, please follow these steps:
+
+1. Make your code changes
+2. Create a changeset to document your changes:
+   ```bash
+   yarn changeset
+   ```
+3. Commit your changes and the changeset
+4. When ready to release a new version:
+   ```bash
+   yarn new-version
+   ```
+5. To publish the new version:
+   ```bash
+   yarn release
+   ```
+
 ## 🙏 Thanks
 
 Thanks to the developers of the following dependencies that we're using:
