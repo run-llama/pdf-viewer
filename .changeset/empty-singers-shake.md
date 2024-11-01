@@ -2,4 +2,4 @@
 '@llamaindex/pdf-viewer': minor
 ---
 
-extract css 
+extract css
