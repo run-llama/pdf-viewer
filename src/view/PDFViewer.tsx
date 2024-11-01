@@ -3,7 +3,6 @@ import usePDFViewer from '../hooks/usePdfViewer.js';
 import type { PdfDocument } from '../types/document.js';
 import MemoizedVirtualizedPDF from './VirtualizedPdf.js';
 import PDFOptionsBar from './PdfOptionsBar.js';
-import './index.css';
 import { clsx } from 'clsx';
 
 interface PDFViewerProps {

@@ -13,6 +13,7 @@ npm install @llamaindex/pdf-viewer
 ```jsx
 import React from 'react';
 
+import '@llamaindex/pdf-viewer/index.css';
 import { PDFViewer, PdfFocusProvider } from '@llamaindex/pdf-viewer';
 
 const file = {

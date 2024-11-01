@@ -4,8 +4,6 @@ import type { CSSProperties } from 'react';
 import React, { forwardRef, memo, useCallback, useEffect, useRef, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { Document, Page, pdfjs } from 'react-pdf';
-import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
-import 'react-pdf/dist/esm/Page/TextLayer.css';
 import { VariableSizeList as List } from 'react-window';
 import { multiHighlight } from '../utils/multi-line-highlight.js';
 import { usePdfFocus } from '../hooks/usePdfFocus.js';

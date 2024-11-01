@@ -12,6 +12,7 @@
   "source": "./src/index.ts",
   "types": "./dist/cjs/index.d.ts",
   "exports": {
+    "./index.css": "./dist/esm/view/index.css",
     ".": {
       "import": "./dist/esm/index.js",
       "require": "./dist/cjs/index.js"
