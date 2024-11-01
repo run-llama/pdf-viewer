@@ -1,3 +1,6 @@
+@import url('https://cdn.jsdelivr.net/npm/react-pdf@9.1.0/dist/esm/Page/AnnotationLayer.css');
+@import url('https://cdn.jsdelivr.net/npm/react-pdf@9.1.0/dist/esm/Page/TextLayer.css');
+
 .pdf-viewer-container {
   display: flex;
   flex-direction: column;
