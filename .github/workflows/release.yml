@@ -27,6 +27,14 @@ jobs:
       - name: Install dependencies
         run: yarn --immutable
 
+      - name: Add auth token to .npmrc file
+        run: |
+          cat << EOF >> ".npmrc"
+            //registry.npmjs.org/:_authToken=$NPM_TOKEN
+          EOF
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
       - name: Get changeset status
         id: get-changeset-status
         run: |
