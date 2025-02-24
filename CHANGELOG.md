@@ -1,5 +1,11 @@
 # @llamaindex/pdf-viewer
 
+## 1.3.0
+
+### Minor Changes
+
+- 2f18c6d: fix: remove deprecated tilde ~
+
 ## 1.2.0
 
 ### Minor Changes
